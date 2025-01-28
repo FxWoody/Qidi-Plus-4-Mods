@@ -1,7 +1,7 @@
 # **BEACON RevH INSTALL ON QIDI PLUS 4**
 
 ## ***---IMPORTANT---***
-## These MACRO SCRIPT FILES are from my own QIDI PLUS 4 modifications in order to make Beacon3D probe to work
+## These MACRO SCRIPT FILES are from my own QIDI PLUS 4 modifications in order to make Beacon3D probe to work and is in ALPHA version for now.
 
 
 ### :+1:Please be advise that these modifications are not PART of QIDI's own Klipper and therefor, i will not take any responsability for any issues that could prevail from using these scripts. I have also made many more adjusments that have been taken from the community page and that are fully integrated into these, thanks to crew of Discord, and that you can read here : [Qidi-Community](https://github.com/qidi-community/Plus4-Wiki/tree/main). :+1:
