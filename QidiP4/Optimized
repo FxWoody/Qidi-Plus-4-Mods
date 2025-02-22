@@ -1,1 +1,86 @@
+####klipper.service####
+# /etc/systemd/system/klipper.service
 
+[Unit]
+Description=Klipper 3D Printer Firmware SV1
+Documentation=https://www.klipper3d.org/
+After=network-online.target
+Wants=udev.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=mks
+RemainAfterExit=yes
+WorkingDirectory=/home/mks/klipper
+EnvironmentFile=/home/mks/printer_data/systemd/klipper.env
+ExecStart=/home/mks/klippy-env/bin/python $KLIPPER_ARGS
+Nice=-5
+Restart=always
+RestartSec=10
+
+####makerbase-client.service####
+# /lib/systemd/system/makerbase-client.service
+
+[Unit]
+Description=MakerbaseClient
+After=moonraker.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStartPre=chmod 700 /root/xindi/build/xindi
+ExecStart=bash /root/xindi/build/start.sh
+Nice=10
+
+[Install]
+WantedBy=multi-user.target
+
+
+####moonraker.service####
+# /etc/systemd/system/moonraker.service
+[Unit]
+Description=API Server for Klipper SV1
+Documentation=https://moonraker.readthedocs.io/
+Requires=network-online.target
+After=network-online.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=mks
+SupplementaryGroups=moonraker-admin
+RemainAfterExit=yes
+WorkingDirectory=/home/mks/moonraker
+EnvironmentFile=/home/mks/printer_data/systemd/moonraker.env
+ExecStart=/home/mks/moonraker-env/bin/python $MOONRAKER_ARGS
+Nice=2
+Restart=always
+RestartSec=10
+
+
+####webcamd.service####
+# /etc/systemd/system/webcamd.service
+
+[Unit]
+Description=Starts mjpg-streamer on startup
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=forking
+User=mks
+WorkingDirectory=/usr/local/bin
+StandardOutput=append:/var/log/webcamd.log
+StandardError=append:/var/log/webcamd.log
+ExecStart=/usr/local/bin/webcamd
+Nice=12
+Restart=always
