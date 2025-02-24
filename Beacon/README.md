@@ -1,4 +1,4 @@
-# **BEACON RevH INSTALL ON QIDI PLUS 4**
+# **BEACON RevH "Normal" INSTALL ON QIDI PLUS 4**
 
 ## ***---IMPORTANT---***
 ## These MACRO SCRIPT FILES are from my own QIDI PLUS 4 modifications in order to make Beacon3D probe to work and is in ALPHA version for now.
