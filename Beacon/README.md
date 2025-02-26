@@ -1,7 +1,7 @@
 # **BEACON RevH "Normal" INSTALL ON QIDI PLUS 4**
 
 ## ***---IMPORTANT---***
-## These MACRO SCRIPT FILES are from my own QIDI PLUS 4 modifications in order to make Beacon3D probe to work and is mainly, a copy of Stew675's script.
+## These MACRO SCRIPT FILES are from my own QIDI PLUS 4 modifications in order to make Beacon3D probe to work and is mainly, a copy of Stew675's AMAZING script.
 ##
 
 
@@ -48,14 +48,33 @@ After this, we are done in SSH mode.
 ## Copy/Paste of the .cfg files
 > [!IMPORTANT]
 ***First -***, in your QP4 configuration, locate the **printer.cfg** and **gcode_macro.cfg**, rename those as ***park-printer.cfg*** and ***park-gcode_macro.cfg*** so that you can revert to it later (saving it on your PC with notepad or your favorite editor, *Mobaxterm* as is own that you can use, is even better as a backup)
+>
+> ***NOTE -*** My config files have been tuned for my OWN printer and might need to be readjusted to your printer setup. I have removed the mods that are not necessary, but, i would HIGLY suggest that you install SHAKETUNE :
+> https://github.com/qidi-community/ShakeTune-For-Plus4
 
 Open the ***printer.cfg & gcode_macro.cfg*** from this repository and copy them into each of your ***Configuration Files*** by creating each new files like so :
+
+***NOTE THAT I OMIT THE ".CFG" AFTER WRITING "PRINTER" ...PLEASE REMEMBER TO ADD IT WHEN CREATING YOUR FILE*** 
 
 https://github.com/user-attachments/assets/59b034cf-4111-4476-8d64-ce53f5c2da31
 > [!IMPORTANT]
 Then, simply COPY / PASTE each macro into their own folder .... **Save & Restart** will be ask at each file closer. I have also include KAMP settings if you want to adjust it to your taste (but it is set for quick purging  **NOTE:** ***LINE_PURGE need to be added to your printer setings Machine_start-gcode***)
 >
-> Now that Beacon is install, we are ready to do the **calibrations**. Please refer to the "Beacon Instal Page" in the link below for proper calibration and better understanding of the probe.
+> Now that Beacon is install, we are ready to do the **calibrations**.
+>
+## Calibration of your new Beacon
+With all the above changes in place (and the firmware restarted) your Beacon can now be easily calibrated with the following typed into the Gcode Console:
+```
+G32
+G29
+G31
+SAVE_CONFIG
+```
+This will set the Plus4 to generate a default bed mesh (G32), then do a full calibration home and bed mesh (G29), and then finally put the Plus4 back into Kamp mode meshing ready for the next print (G31). The whole lot gets saved afterwards (SAVE_CONFIG)
+
+
+>
+> Please refer to the "Beacon Instal Page" in the link below for proper calibration and better understanding of the probe.
 
 # Links to External
 
