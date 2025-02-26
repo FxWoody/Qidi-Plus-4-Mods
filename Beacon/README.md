@@ -1,16 +1,22 @@
 # **BEACON RevH "Normal" INSTALL ON QIDI PLUS 4**
 
 ## ***---IMPORTANT---***
-## These MACRO SCRIPT FILES are from my own QIDI PLUS 4 modifications in order to make Beacon3D probe to work and is in ALPHA version for now.
+## These MACRO SCRIPT FILES are from my own QIDI PLUS 4 modifications in order to make Beacon3D probe to work and is mainly, a copy of Stew675's script.
+##
 
 
 ### :+1:Please be advise that these modifications are not PART of QIDI's own Klipper and therefor, i will not take any responsability for any issues that could prevail from using these scripts. I have also made many more adjusments that have been taken from the community page and that are fully integrated into these, thanks to crew of Discord, and that you can read here : [Qidi-Community](https://github.com/qidi-community/Plus4-Wiki/tree/main). :+1:
 
-#### *** I will continue to work on this as with more knowledge comes out of it :wink:*** ####
+#### *** This install is fully working and should be followed very carefully :wink:*** ####
 
 ## Install the PROBE on the toolhead
-Download my files on Printables:
+Download my files from Printables:
 https://www.printables.com/model/1165232-qidi-plus-4-beacon-cooling-fan
+
+Or you can use Stew's setup :
+https://www.printables.com/model/1170120-beacon3d-mount-for-qidi-plus4
+
+> ***NOTE that by using my Beacon Module installation, the probe will be on the right side on the tool head and requires to replace the cooling DUCT !!! I have added the STL for this puposes and my fan/duct system is more efficient than the original one***
 
 Remove old probe, fan housing, and replace with new printed one.
 **I will make some DEMO pic soon**
@@ -34,7 +40,7 @@ Navigate to the ***/home/mks/klipper/klippy/extras/*** like so :
 
 https://github.com/user-attachments/assets/80a6965c-9cf2-4efb-97a6-fbfab288c99c
 #### From here, we have two choice in order to replace the Python File ####
-You can simply **DRAG & DROP** the file you recovered earlier from your PC, or double click the PROBE.PY, this will open the **MobaTextEditor** ,select ALL, and paste the KLIPPER file and over-write it. 
+You can simply **DRAG & DROP** the file you recovered earlier from your PC, or double click the PROBE.PY, this will open the **MobaTextEditor** ,select ALL, and paste the PROBE.PY file over-write it. 
 > [!NOTE]
 > Saving will bring you to a contextual menu for you to agree to **SAVE**.
 After this, we are done in SSH mode.
