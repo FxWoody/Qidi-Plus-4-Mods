@@ -17,6 +17,8 @@ Or you can use Stew's setup :
 https://www.printables.com/model/1170120-beacon3d-mount-for-qidi-plus4
 
 > ***NOTE that by using my Beacon Module installation, the probe will be on the right side on the tool head and requires to replace the cooling DUCT !!! I have added the STL for this puposes and my fan/duct system is more efficient than the original one***
+> ![blower-beacon](https://github.com/user-attachments/assets/ac217672-79cd-4453-a933-b221f627b6b5)
+
 
 Remove old probe, fan housing, and replace with new printed one.
 **I will make some DEMO pic soon**
@@ -31,9 +33,11 @@ Once in SSH, you will need to install the Beacon script:
 > ***Install Beacon Module***
 #### Clone beacon_klipper from git and run the install script:
 
-`cd ~
+```
+cd ~
 git clone https://github.com/beacon3d/beacon_klipper.git
-./beacon_klipper/install.sh`
+./beacon_klipper/install.sh
+```
 
 Now that **BEACON** is installed, we need to replace the ***PROBE.PY*** inside the **KLIPPER**.
 Navigate to the ***/home/mks/klipper/klippy/extras/*** like so : 
