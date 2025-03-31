@@ -18,11 +18,11 @@ https://www.printables.com/model/1214824-qidi-plus-4-knomi-cover
 In order to have KNOMI to hook with our printer, we need to UPDATE the firmware first.
 
 
-## Copy/Paste of the .cfg files
+## Add Knomi.cfg to your repo
 
 
 
->
+>In printer.cfg, add the macro link `[include KNOMI.cfg]`
 >
 >
 
