@@ -29,7 +29,23 @@ BTT Knomi: https://bttwiki.com/KNOMI.html
 > `[include KNOMI.cfg]`
 
 >[!IMPORTANT]
->#### And use the PB4 connector to power your KNomi
+>#### Use the PB4 connector to power your Knomi
+
+> Find :
+```ruby
+[heater_fan hotend_fan2]
+pin:PB4
+max_power: 1.0
+shutdown_speed:1.0
+kick_start_time: 0.5
+heater: extruder
+heater_temp: 50.0
+fan_speed: 1.0
+off_below: 0
+```
+
+and replace with:
+
 ```ruby
 [output_pin knomi]
 pin: PB4
@@ -37,6 +53,52 @@ value: 1
 shutdown_value: 1
 ```
 ![pcb](https://github.com/user-attachments/assets/a925972b-1db3-4970-9f61-1e3f8058a9be)
+
+## Upload KNOMI.cfg
+```ruby
+[gcode_macro _KNOMI_STATUS]
+variable_homing: False
+variable_probing: False
+variable_qgling: False
+variable_heating_nozzle: False
+variable_heating_bed: False
+gcode:
+
+[gcode_macro M109]
+rename_existing: M109.1
+gcode:
+  SET_GCODE_VARIABLE MACRO=_KNOMI_STATUS VARIABLE=heating_nozzle VALUE=True
+  M109.1 {rawparams}
+  SET_GCODE_VARIABLE MACRO=_KNOMI_STATUS VARIABLE=heating_nozzle VALUE=False
+
+[gcode_macro M190]
+rename_existing: M190.1
+gcode:
+  SET_GCODE_VARIABLE MACRO=_KNOMI_STATUS VARIABLE=heating_bed VALUE=True
+  M190.1 {rawparams}
+  SET_GCODE_VARIABLE MACRO=_KNOMI_STATUS VARIABLE=heating_bed VALUE=False
+
+[gcode_macro G28]
+rename_existing: G28.1
+gcode:
+  SET_GCODE_VARIABLE MACRO=_KNOMI_STATUS VARIABLE=homing VALUE=True
+  G28.1 {rawparams}
+  SET_GCODE_VARIABLE MACRO=_KNOMI_STATUS VARIABLE=homing VALUE=False
+
+[gcode_macro _BED_MESH_CALIBRATE]
+rename_existing: BTT_BED_MESH_CALIBRATE
+gcode:
+  SET_GCODE_VARIABLE MACRO=_KNOMI_STATUS VARIABLE=qgling VALUE=True
+  BTT_BED_MESH_CALIBRATE {rawparams}
+  SET_GCODE_VARIABLE MACRO=_KNOMI_STATUS VARIABLE=qgling VALUE=False
+
+[gcode_macro Z_TILT_ADJUST]
+rename_existing: BTT_Z_TILT_ADJUST
+gcode:
+ SET_GCODE_VARIABLE MACRO=_KNOMI_STATUS VARIABLE=probing VALUE=True
+ BTT_Z_TILT_ADJUST
+ SET_GCODE_VARIABLE MACRO=_KNOMI_STATUS VARIABLE=probing VALUE=False
+```
 
 # Links to External
 
