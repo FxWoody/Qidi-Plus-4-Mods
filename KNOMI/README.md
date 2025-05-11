@@ -11,24 +11,32 @@
 
 ## Install the KNOMI in the toolhead cover
 Download my files from Printables:
-https://www.printables.com/model/1214824-qidi-plus-4-knomi-cover
+
+Knomi Cover: [Fxwoody Printables](https://www.printables.com/model/1214824-qidi-plus-4-knomi-cover)
 
 ## Let's get ready in the CONFIGS :
 
 In order to have KNOMI to hook with our printer, we need to UPDATE the firmware first.
 
+Follow the instructions from BTT page
+
+BTT Knomi: https://bttwiki.com/KNOMI.html
+
 
 ## Add Knomi.cfg to your repo
 
+>In printer.cfg, add the macro link
+> `[include KNOMI.cfg]`
 
-
->In printer.cfg, add the macro link `[include KNOMI.cfg]`
->
->
-
-
->
->
+>[!IMPORTANT]
+>#### And use the PB4 connector to power your KNomi
+```ruby
+[output_pin knomi]
+pin: PB4
+value: 1
+shutdown_value: 1
+```
+![pcb](https://github.com/user-attachments/assets/a925972b-1db3-4970-9f61-1e3f8058a9be)
 
 # Links to External
 
