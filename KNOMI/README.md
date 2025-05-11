@@ -54,7 +54,7 @@ shutdown_value: 1
 ```
 ![pcb](https://github.com/user-attachments/assets/a925972b-1db3-4970-9f61-1e3f8058a9be)
 
-## Upload KNOMI.cfg
+## Create your KNOMI.cfg file and paste this in it
 ```ruby
 [gcode_macro _KNOMI_STATUS]
 variable_homing: False
