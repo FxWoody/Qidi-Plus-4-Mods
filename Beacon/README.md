@@ -91,3 +91,5 @@ Beacon Probe RevH: [Beacon Probe RevH Model : Normal](https://beacon3d.com/produ
 Qidi Community Work : [Qidi-Community Github](https://github.com/qidi-community/Plus4-Wiki/tree/main).
 
 Facebook QidiTech : [QidiTech Officia](https://www.facebook.com/groups/qiditechofficialusers).
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W11KG305)
